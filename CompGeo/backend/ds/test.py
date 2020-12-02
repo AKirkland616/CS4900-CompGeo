@@ -45,36 +45,5 @@ class TestPoint(unittest.TestCase):
 		point1 = Point(-1,0)
 		self.assertEqual(point1.getX(), -1)
 
-class TestLineSeg(unittest.TestCase):
-
-	def test_lineseg_constructor_start(self):
-		# Test start point x1,y1
-
-		lineseg = LineSeg(0,0,1,1)
-
-		x1 = lineseg.getStart().getX()
-		self.assertEqual(x1,0)
-
-		y1 = lineseg.getStart().getY()
-		self.assertEqual(y1,0)
-
-	def test_lineseg_constructor_end(self):
-		# Test end point x2,y2
-
-		lineseg = LineSeg(0,0,1,1)
-
-		x2 = lineseg.getEnd().getX()
-		self.assertEqual(x2,1)
-
-		y2 = lineseg.getEnd().getY()
-		self.assertEqual(y2,1)
-
-	def test_lineseg_constructor_samepoints(self):
-		# Test if the two points are identical, if so it should raise an exception.
-		
-		# This should raise an exception.
-		with self.assertRaises(Exception):
-    			lineseg = LineSeg(0,0,0,0)
-
 if __name__ == '__main__':
 	unittest.main()
