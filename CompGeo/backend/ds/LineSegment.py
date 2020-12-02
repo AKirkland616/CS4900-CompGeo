@@ -1,11 +1,16 @@
 class LineSegment(object):
-    # create line segment from 2 points possibly throw error if input is incorrect
+
+    # create line segment from two different points or return -1
+    def __new__(cls, point1, point2):
+        if ((isinstance(point1, Point) and isinstance(point2, Point)) and (point1 != point2)):
+            return super(LineSegment, cls).__new__(cls, point1, point2)
+        else:
+            return -1
+
+    # inits line segment from 2 points
     def __init__(self, point1, point2):
-        if (isinstance(point1, Point) and isinstance(point2, Point)):
             self.a = point1
             self.b = point2
-        else:
-            # throw error? or will wrong input be caught as read of inputed
 
     # prints line segment in an understandable way. can be rewritten easily
     def __str__(self):
