@@ -11,4 +11,14 @@ class Point:
 	def getY(self):
 		return self.y
 
+	# prints point in an understandable way. can be rewritten easily
+	def __str__(self):
+		return ("(" + str(self.x) + ", " + str(self.y) + ")")
+
+	# compares points. Returns true if equal, or false if not.
+	def __eq__(self, other):
+		if (isinstance(other, Point)):
+			return ((self.x == other.x and self.y == other.y) or (self.x == other.y and self.y == other.x))
+		return False
+
 
