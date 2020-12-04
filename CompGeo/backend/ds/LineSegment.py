@@ -3,7 +3,7 @@ from CompGeo.backend.ds.point import Point
 class LineSegment(object):
     # create line segment from two different points or return -1
     def __new__(cls, point1, point2):
-        if isinstance((point1, point2), Point) and point1 != point2:
+        if isinstance(point1, Point) and isinstance(point2, Point) and point1 != point2:
             return super(LineSegment, cls).__new__(cls)
 
         else:
