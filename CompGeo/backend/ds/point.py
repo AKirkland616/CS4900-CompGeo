@@ -1,11 +1,12 @@
 class Point:
 	def __new__(cls, x, y):
-		if isinstance(x, str) or isinstance(y, str) or isinstance(x, bool) or isinstance(y, bool):
+		if not (isinstance(x, (int, float))) or isinstance(x, bool):
 			return -1
-		if not isinstance(x, int) and not isinstance(x, float):
+
+		if not (isinstance(y, (int, float))) or isinstance(y, bool):
 			return -1
-		if not isinstance(y, int) and not isinstance(y, float):
-			return -1
+
+		return super(Point, cls).__new__(cls)
 
 	def __init__(self, x, y):
 		self.x = x
@@ -17,13 +18,18 @@ class Point:
 	def get_y(self):
 		return self.y
 
-	# prints point in an understandable way. can be rewritten easily
 	def __str__(self):
+		'''
+		Prints point in an understandable way. can be rewritten easily.
+		'''
 		return "(" + str(self.x) + ", " + str(self.y) + ")"
-
-	# compares points. Returns true if equal, or false if not.
+	
 	def __eq__(self, other):
+		'''
+		Compares points. Returns true if equal, or false if not.
+		'''
 		if isinstance(other, Point):
-			return (self.x == other.x and self.y == other.y) or (self.x == other.y and self.y == other.x)
+			return self.x == other.x and self.y == other.y
+
 		return False
 
