@@ -1,6 +1,7 @@
 import unittest
 from CompGeo.backend.ds.point import Point
 
+
 class TestPoint(unittest.TestCase):
 
     def test_point_constructor_x(self):
@@ -37,6 +38,7 @@ class TestPoint(unittest.TestCase):
         # (zero, negative)
         point1 = Point(-1, 0)
         self.assertEqual(point1.get_x(), -1)
+
 
 if __name__ == '__main__':
     unittest.main()

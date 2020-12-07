@@ -18,19 +18,18 @@ class Point:
 	def get_y(self):
 		return self.y
 
-	
 	def __str__(self):
 		'''
 		Prints point in an understandable way. can be rewritten easily.
 		'''
 		return "(" + str(self.x) + ", " + str(self.y) + ")"
-
 	
 	def __eq__(self, other):
 		'''
 		Compares points. Returns true if equal, or false if not.
 		'''
 		if isinstance(other, Point):
-			return (self.x == other.x and self.y == other.y)
+			return self.x == other.x and self.y == other.y
 
 		return False
+

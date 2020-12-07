@@ -5,7 +5,7 @@ from CompGeo.backend.ds.LineSegment import LineSegment
 
 class Tests(unittest.TestCase):
 
-    def test_LineSegment(self):
+    def test_line_segment(self):
 
         # test values
         zero = 0
